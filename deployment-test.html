@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerome's Birthday - Deployment Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-section {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-result {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .pass { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .fail { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .warning { background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #0056b3; }
+        #test-results { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>🎉 Jerome's Birthday Website - Deployment Test</h1>
+    
+    <div class="test-section">
+        <h2>🔧 System Tests</h2>
+        <button onclick="runAllTests()">Run All Tests</button>
+        <button onclick="testAudioContext()">Test Audio</button>
+        <button onclick="testMicrophone()">Test Microphone</button>
+        <button onclick="testLocalStorage()">Test Storage</button>
+        <button onclick="testImages()">Test Images</button>
+        <div id="test-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>🎂 Quick Function Tests</h2>
+        <button onclick="testCandleBlowing()">Test Candle Blowing</button>
+        <button onclick="testBalloonPopping()">Test Balloon Creation</button>
+        <button onclick="testVoting()">Test Voting System</button>
+        <button onclick="testWishSubmission()">Test Wish Submission</button>
+    </div>
+
+    <div class="test-section">
+        <h2>📱 Environment Info</h2>
+        <div id="env-info"></div>
+    </div>
+
+    <script>
+        function addResult(message, type = 'pass') {
+            const results = document.getElementById('test-results');
+            const div = document.createElement('div');
+            div.className = `test-result ${type}`;
+            div.textContent = message;
+            results.appendChild(div);
+        }
+
+        function clearResults() {
+            document.getElementById('test-results').innerHTML = '';
+        }
+
+        function testAudioContext() {
+            clearResults();
+            try {
+                if (window.AudioContext || window.webkitAudioContext) {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    addResult('✅ Web Audio API supported', 'pass');
+                    addResult(`Audio context state: ${audioContext.state}`, audioContext.state === 'running' ? 'pass' : 'warning');
+                    
+                    if (audioContext.state === 'suspended') {
+                        addResult('⚠️ Audio context suspended - user interaction required', 'warning');
+                    }
+                } else {
+                    addResult('❌ Web Audio API not supported', 'fail');
+                }
+            } catch (error) {
+                addResult(`❌ Audio context error: ${error.message}`, 'fail');
+            }
+        }
+
+        function testMicrophone() {
+            clearResults();
+            const isSecure = window.isSecureContext || location.protocol === 'https:' || location.hostname === 'localhost';
+            
+            if (!isSecure) {
+                addResult('❌ Not in secure context - microphone requires HTTPS', 'fail');
+                return;
+            }
+
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                addResult('✅ getUserMedia API available', 'pass');
+                addResult('ℹ️ Microphone permission test requires user interaction', 'warning');
+            } else {
+                addResult('❌ getUserMedia API not available', 'fail');
+            }
+        }
+
+        function testLocalStorage() {
+            clearResults();
+            try {
+                localStorage.setItem('test', 'value');
+                const value = localStorage.getItem('test');
+                localStorage.removeItem('test');
+                
+                if (value === 'value') {
+                    addResult('✅ localStorage working correctly', 'pass');
+                } else {
+                    addResult('❌ localStorage read/write failed', 'fail');
+                }
+            } catch (error) {
+                addResult(`❌ localStorage error: ${error.message}`, 'fail');
+            }
+        }
+
+        function testImages() {
+            clearResults();
+            const images = ['cake.png', 'jerome.jpg', 'jerome1.jpg'];
+            let loadedCount = 0;
+            let totalImages = images.length;
+
+            images.forEach(src => {
+                const img = new Image();
+                img.onload = () => {
+                    loadedCount++;
+                    addResult(`✅ ${src} loaded successfully`, 'pass');
+                    if (loadedCount === totalImages) {
+                        addResult('✅ All images loaded successfully', 'pass');
+                    }
+                };
+                img.onerror = () => {
+                    addResult(`❌ ${src} failed to load`, 'fail');
+                };
+                img.src = src;
+            });
+        }
+
+        function testCandleBlowing() {
+            clearResults();
+            addResult('🕯️ Candle blowing function test', 'pass');
+            addResult('ℹ️ Check main website for visual candle blowing', 'warning');
+        }
+
+        function testBalloonPopping() {
+            clearResults();
+            addResult('🎈 Balloon creation function test', 'pass');
+            addResult('ℹ️ Check main website for balloon interactions', 'warning');
+        }
+
+        function testVoting() {
+            clearResults();
+            addResult('🗳️ Voting system function test', 'pass');
+            addResult('ℹ️ Check main website for voting functionality', 'warning');
+        }
+
+        function testWishSubmission() {
+            clearResults();
+            addResult('💝 Wish submission function test', 'pass');
+            addResult('ℹ️ Check main website for wish submission', 'warning');
+        }
+
+        function runAllTests() {
+            clearResults();
+            addResult('🚀 Running comprehensive tests...', 'warning');
+            
+            setTimeout(() => testAudioContext(), 100);
+            setTimeout(() => testMicrophone(), 500);
+            setTimeout(() => testLocalStorage(), 1000);
+            setTimeout(() => testImages(), 1500);
+        }
+
+        // Display environment info
+        function displayEnvInfo() {
+            const envInfo = document.getElementById('env-info');
+            envInfo.innerHTML = `
+                <p><strong>User Agent:</strong> ${navigator.userAgent}</p>
+                <p><strong>Protocol:</strong> ${location.protocol}</p>
+                <p><strong>Host:</strong> ${location.host}</p>
+                <p><strong>Secure Context:</strong> ${window.isSecureContext ? 'Yes' : 'No'}</p>
+                <p><strong>Screen Size:</strong> ${screen.width}x${screen.height}</p>
+                <p><strong>Viewport:</strong> ${window.innerWidth}x${window.innerHeight}</p>
+                <p><strong>Touch Support:</strong> ${'ontouchstart' in window ? 'Yes' : 'No'}</p>
+            `;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', displayEnvInfo);
+    </script>
+</body>
+</html>

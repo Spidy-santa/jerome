@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Jerome! 🎉</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="cake.png" as="image" type="image/png">
+</head>
+<body>
+    <!-- Confetti Container -->
+    <div id="confetti-container"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="main-title">🎉 Happy Birthday Jerome! 🎉</h1>
+            <div class="score-display">
+                <span class="score-label">Birthday Points:</span>
+                <span id="score">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="photo-frame">
+                    <img src="jerome.jpg" alt="Jerome" class="jerome-photo main-photo" id="jerome-photo"
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSIxMDAiIGZpbGw9InVybCgjZ3JhZGllbnQpIi8+PHRleHQgeD0iMTAwIiB5PSIxMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI2MCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPvCfjoo8L3RleHQ+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkaWVudCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY2NjZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzMzMzNkZCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjwvc3ZnPg=='">
+                    <div class="photo-border"></div>
+                    <div class="photo-glow"></div>
+                </div>
+                <div class="birthday-message">
+                    <h2>Another Year of Excellence!</h2>
+                    <p>Celebrating your journey and achievements 🚀</p>
+                    <div class="achievement-badges">
+                        <span class="badge">🎯 Goal Crusher</span>
+                        <span class="badge">⭐ Legend</span>
+                        <span class="badge">🔥 Unstoppable</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="photo-gallery">
+        <div class="container">
+            <h3>Memories & Moments</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item featured">
+                    <img src="jerome1.jpg" alt="Jerome - Featured"
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9InVybCgjZ3JhZGllbnQyKSIvPjx0ZXh0IHg9IjE1MCIgeT0iMTEwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDAiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn5OSPC90ZXh0Pjx0ZXh0IHg9IjE1MCIgeT0iMTQwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5GZWF0dXJlZCBQaG90bzwvdGV4dD48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MiIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ0NDRhYSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzIyMjI4OCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjwvc3ZnPg=='">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Featured Moment</span>
+                    </div>
+                </div>
+                <div class="gallery-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="celebrations">∞</span>
+                        <span class="stat-label">Dreams Achieved</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="memories-made">∞</span>
+                        <span class="stat-label">Lives Touched</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Cake Section -->
+    <section class="cake-section">
+        <div class="container">
+            <h3>🎂 Make Your Wish Come True</h3>
+            <div class="cake-container">
+                <div class="cake-platform">
+                    <div class="cake">
+                        <img src="cake.png"
+                             alt="Beautiful birthday cake for Jerome"
+                             class="cake-image"
+                             onerror="this.style.display='none'; document.querySelector('.css-cake-fallback').style.display='block';"
+                             loading="lazy">
+
+                        <!-- CSS Fallback Cake (hidden by default) -->
+                        <div class="css-cake-fallback" style="display: none;">
+                            <div class="cake-layer cake-bottom">
+                                <div class="cake-decoration bottom-decoration"></div>
+                            </div>
+                            <div class="cake-layer cake-middle">
+                                <div class="cake-decoration middle-decoration"></div>
+                            </div>
+                            <div class="cake-layer cake-top">
+                                <div class="cake-decoration top-decoration"></div>
+                            </div>
+                        </div>
+                        <div class="candles">
+                            <div class="candle" data-candle="1">
+                                <div class="flame" id="flame1"></div>
+                                <div class="wick"></div>
+                                <div class="wax-drip"></div>
+                            </div>
+                            <div class="candle" data-candle="2">
+                                <div class="flame" id="flame2"></div>
+                                <div class="wick"></div>
+                                <div class="wax-drip"></div>
+                            </div>
+                            <div class="candle" data-candle="3">
+                                <div class="flame" id="flame3"></div>
+                                <div class="wick"></div>
+                                <div class="wax-drip"></div>
+                            </div>
+                            <div class="candle" data-candle="4">
+                                <div class="flame" id="flame4"></div>
+                                <div class="wick"></div>
+                                <div class="wax-drip"></div>
+                            </div>
+                            <div class="candle" data-candle="5">
+                                <div class="flame" id="flame5"></div>
+                                <div class="wick"></div>
+                                <div class="wax-drip"></div>
+                            </div>
+                        </div>
+                        <div class="cake-shadow"></div>
+                    </div>
+                </div>
+                <div class="cake-controls">
+                    <button id="blow-candles" class="blow-btn">
+                        <span class="btn-icon">💨</span>
+                        <span class="btn-text">Blow Candles</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <div class="sound-toggle">
+                        <button id="sound-toggle" class="sound-btn">🔊</button>
+                    </div>
+                </div>
+                <p class="game-instruction">Click the button, press spacebar, or blow into your microphone!</p>
+                <div class="cake-achievements">
+                    <div class="achievement" id="first-blow">🕯️ First Blow</div>
+                    <div class="achievement" id="all-candles">🎉 Wish Master</div>
+                    <div class="achievement" id="speed-demon">⚡ Speed Demon</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voting Poll Section -->
+    <section class="voting-poll">
+        <div class="container">
+            <h3>🎁 Jerome's Special Treat</h3>
+            <p class="poll-description">Help choose Jerome's birthday celebration destination!</p>
+            <div class="poll-container">
+                <div class="poll-main">
+                    <div class="poll-options">
+                        <div class="poll-option" data-option="tea-shop">
+                            <div class="option-icon">🍵</div>
+                            <div class="option-content">
+                                <h4>Tea Shop</h4>
+                                <p>Cozy atmosphere & premium teas</p>
+                            </div>
+                            <div class="vote-bar">
+                                <div class="vote-fill" id="tea-shop-fill"></div>
+                            </div>
+                        </div>
+
+                        <div class="poll-option" data-option="bakery">
+                            <div class="option-icon">🥐</div>
+                            <div class="option-content">
+                                <h4>Bakery</h4>
+                                <p>Fresh pastries & sweet treats</p>
+                            </div>
+                            <div class="vote-bar">
+                                <div class="vote-fill" id="bakery-fill"></div>
+                            </div>
+                        </div>
+
+                        <div class="poll-option" data-option="hotel">
+                            <div class="option-icon">🏨</div>
+                            <div class="option-content">
+                                <h4>Hotel</h4>
+                                <p>Luxury dining & celebration</p>
+                            </div>
+                            <div class="vote-bar">
+                                <div class="vote-fill" id="hotel-fill"></div>
+                            </div>
+                        </div>
+
+                        <div class="poll-option" data-option="adventure">
+                            <div class="option-icon">🎢</div>
+                            <div class="option-content">
+                                <h4>Adventure Park</h4>
+                                <p>Thrilling rides & excitement</p>
+                            </div>
+                            <div class="vote-bar">
+                                <div class="vote-fill" id="adventure-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poll-sidebar">
+                    <div class="poll-results">
+                        <h4>🗳️ Results</h4>
+                        <div class="result-item">
+                            <span class="result-label">Tea Shop</span>
+                            <span class="result-count" id="tea-shop-count">0 votes</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Bakery</span>
+                            <span class="result-count" id="bakery-count">0 votes</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Hotel</span>
+                            <span class="result-count" id="hotel-count">0 votes</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Adventure</span>
+                            <span class="result-count" id="adventure-count">0 votes</span>
+                        </div>
+                        <div class="total-votes">
+                            <span class="votes-number" id="total-votes">0</span>
+                            <span class="votes-label">Total Votes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Balloon Game Section -->
+    <section class="balloon-game">
+        <div class="container">
+            <h3>Pop the Balloons! 🎈</h3>
+            <div class="game-stats">
+                <span>Balloons Popped: <span id="balloons-popped">0</span></span>
+                <button id="new-balloon" class="new-balloon-btn">New Balloon</button>
+            </div>
+            <div class="balloon-container" id="balloon-container">
+                <!-- Balloons will be generated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section class="comments-section">
+        <div class="container">
+            <h3>Birthday Wishes 💝</h3>
+            <div class="comment-form">
+                <input type="text" id="visitor-name" placeholder="Your name" maxlength="50">
+                <textarea id="birthday-wish" placeholder="Leave a birthday wish for Jerome..." maxlength="200"></textarea>
+                <button id="submit-wish" class="submit-btn">Send Birthday Wish ✨</button>
+            </div>
+            <div class="wishes-display" id="wishes-display">
+                <!-- Birthday wishes will appear here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>🎂 Made with love by ESSC BOYS for Jerome's special day! 🎂</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
